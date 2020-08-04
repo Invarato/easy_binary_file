@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easy-binary-file-invarato",
-    version="0.0.1",
+    version="1.0.0",
     author="Ramon Invarato Menendez",
     author_email="r.invarato@gmail.com",
     description="Easy way to use binary files with built in class and functions",
