@@ -65,7 +65,7 @@ def dump_ensure_space(file, value, fun_err=None):
 
 def dump_single_value(path_and_file, value, append=False):
     """
-    Open a file in binary mode, dump a single value and close file
+    Open a file in the binary mode, dump a single value and close file
 
     >>> dump_single_value("test_file_single.tmp", "test_value")
 
@@ -81,7 +81,7 @@ def dump_single_value(path_and_file, value, append=False):
 
 def load_single_value(path_and_file):
     """
-    Open a file in binary mode, load a single value, return it and close file
+    Open a file in the binary mode, load a single value, return it and close file
 
     Load the binary value:
     >>> value = load_single_value("test_file_single.tmp")
@@ -97,7 +97,7 @@ def load_single_value(path_and_file):
 
 def dump_items(file, iter_to_save, ensure_space=False, fun_err_space=None):
     """
-    Serialize one iterable in a single file.
+    Serialize one iterable in a single file
 
     >>> with open("test_items.tmp", "wb") as f:
     ...     dump_items(f, ["a", "b", "c"])
@@ -297,7 +297,7 @@ class EasyBinaryFile(object):
 
     def dump_items(self, iter_to_save, ensure_space=False, fun_err_space=None):
         """
-        Serialize one iterable in file.
+        Serialize one iterable in a file.
 
         >>> with EasyBinaryFile("test_ebf_object.tmp") as ebf:
         ...     ebf.dump_items(["a", "b", "c"])
@@ -321,6 +321,21 @@ class EasyBinaryFile(object):
         :return: generator
         """
         return load_items(self.file)
+
+    def __iter__(self):
+        """
+        Iterate all items
+
+        >>> with EasyBinaryFile("test_ebf_object.tmp", "rb") as ebf:
+        ...     for item in ebf.load_items():
+        ...         print(item)
+        a
+        b
+        c
+
+        :return: generator to iterate in all items
+        """
+        return self.load_items()
 
     __test__ = {
         'clean_test_files_obj': """
