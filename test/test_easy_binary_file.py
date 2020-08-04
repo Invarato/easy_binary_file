@@ -7,4 +7,4 @@
 import doctest
 
 if __name__ == "__main__":
-    doctest.testfile("../easy_binary_file/easy_binary_file.py")
+    doctest.testfile("../easy_binary_file_pkg/easy_binary_file.py")

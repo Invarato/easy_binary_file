@@ -14,7 +14,7 @@ except ImportError:
 
 
 __test__ = {'import_test': """
-                           >>> from easy_binary_file.easy_binary_file import *
+                           >>> from easy_binary_file_pkg.easy_binary_file import *
 
                            """}
 
