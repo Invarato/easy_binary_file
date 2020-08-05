@@ -2,19 +2,27 @@
 
 Easy way to use binary files with built in class and functions.
 
+## Installation from PYPI
+You can find last version of project in: https://pypi.org/project/easy-binary-file/
+
+Command to install:
+```
+pip install easy-binary-file
+```
+
 ## Quick use
 Simply import and use functions or class
 
 Example of function to dump a single value:
 ```python
-from easy_binary_file_pkg.easy_binary_file import dump_single_value
+from easy_binary_file import dump_single_value
 
 dump_single_value("test_file_single.tmp", "test_value")
 ```
 
 Example of function to load a single value:
 ```python
-from easy_binary_file_pkg.easy_binary_file import load_single_value
+from easy_binary_file import load_single_value
 
 value = load_single_value("test_file_single.tmp")
 print(value)
@@ -22,7 +30,7 @@ print(value)
 
 Example of instance of class to dump several values:
 ```python
-from easy_binary_file_pkg.easy_binary_file import EasyBinaryFile
+from easy_binary_file import EasyBinaryFile
 
 with EasyBinaryFile("test_ebf_object.tmp") as ebf:
     ebf.dump("First value")
@@ -31,7 +39,7 @@ with EasyBinaryFile("test_ebf_object.tmp") as ebf:
 
 Example of instance of class to read all items:
 ```python
-from easy_binary_file_pkg.easy_binary_file import EasyBinaryFile
+from easy_binary_file import EasyBinaryFile
 
 with EasyBinaryFile("test_ebf_object.tmp", "rb") as ebf:
     for item in ebf:
@@ -42,7 +50,7 @@ with EasyBinaryFile("test_ebf_object.tmp", "rb") as ebf:
 ## Import
 Import functions, class or all.
 ```python
-from easy_binary_file_pkg.easy_binary_file import *
+from easy_binary_file import *
 ```
 
 ## Content
