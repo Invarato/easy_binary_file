@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easy-binary-file",
-    version="1.0.2",
+    version="1.0.3",
     author="Ramon Invarato Menendez",
     author_email="r.invarato@gmail.com",
     description="Easy way to use binary files with built in class and functions",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Invarato/",
+    url="https://github.com/Invarato/easy_binary_file_project",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
