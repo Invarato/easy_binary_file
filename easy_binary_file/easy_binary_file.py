@@ -14,7 +14,7 @@ except ImportError:
 
 
 __test__ = {'import_test': """
-                           >>> from easy_binary_file_pkg.easy_binary_file import *
+                           >>> from easy_binary_file.easy_binary_file import *
 
                            """}
 
@@ -215,23 +215,32 @@ class EasyBinaryFile(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
-    def dump(self, value, ensure_space=False, fun_err_space=None):
+    def dump(self, value):
         """
-        Dump in file one single value
+        Dump one single value in file
 
         >>> with EasyBinaryFile("test_ebf_object.tmp") as ebf:
         ...     ebf.dump("Value test")
 
         :param value: Value to dump in file
-        :param ensure_space: True to dump value if space enough in disk,
-                             False raise exception. By default: False
+        :return: None
+        """
+        pickle.dump(value, self.file, pickle.HIGHEST_PROTOCOL)
+
+    def dump_ensure_space(self, value, fun_err_space=None):
+        """
+        Dump one single value in file only if space enough in disk.
+        If is not enough space, then it retry until have space
+        Note: this method is less efficient and slowly than simple dump
+
+        >>> with EasyBinaryFile("test_ebf_object.tmp") as ebf:
+        ...     ebf.dump_ensure_space("Value test")
+
+        :param value: Value to dump in file
         :param fun_err_space: event previous to sleep if error. By default: None
         :return: None
         """
-        if ensure_space:
-            pickle.dump(value, self.file, pickle.HIGHEST_PROTOCOL)
-        else:
-            dump_ensure_space(self.file, value, fun_err_space)
+        dump_ensure_space(self.file, value, fun_err_space)
 
     def load(self):
         """
