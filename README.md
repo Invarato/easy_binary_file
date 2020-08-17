@@ -87,7 +87,7 @@ The difference between use functions vs class:
 
 
 ## Is useful for you?
-You would be so kind to consider the amount of hours puts in, the great effort and the resources expended in doing this
-project. Thank you.
+Maybe you would be so kind to consider the amount of hours puts in, the great effort and the resources expended in 
+doing this project. Thank you.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PWRRXZ2HETVG8&source=url)
