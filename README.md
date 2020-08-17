@@ -9,6 +9,20 @@ Command to install:
 ```
 pip install easy-binary-file
 ```
+```mermaid
+%% Example of sequence diagram
+  sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+    Bob->>Alice: Not so good :(
+    else is well
+    Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+    Bob->>Alice: Thanks for asking
+    end
+```
+
 
 ## Quick use
 Simply import and use functions or class
@@ -74,12 +88,20 @@ The difference between use functions vs class:
 
 ### Class:
  * `EasyBinaryFile`: Open (or create if not exist) a new binary file.
-    * `close`: Close the binary file
-    * `dump`: Dump in file one single value
-    * `load`: Load from file one single value
-    * `get_cursor_position`: Get last position of cursor in file
-    * `seek`: Seek file in position
-    * `get_by_cursor_position`: Get value by cursor position in file
+    * `close`: Close the binary file.
+    * `dump`: Dump one single value in file.
+    * `dump_ensure_space`: Dump one single value in file only if space enough in disk.
+    * `load`: Load from file one single value.
+    * `get_cursor_position`: Get last position of cursor in file.
+    * `seek`: Seek file in position.
+    * `get_by_cursor_position`: Get value by cursor position in file.
     * `dump_items`: Serialize one iterable in a file.
-    * `load_items`: Deserialize item by item in one stream generator
-    * `__iter__`: wrap of `load_items` result to use directly in a `for` loop
+    * `load_items`: Deserialize item by item in one stream generator.
+    * `__iter__`: wrap of `load_items` result to use directly in a `for` loop.
+
+
+## Is useful for you?
+You would be so kind to consider the amount of hours puts in, the great effort and the resources expended in doing this
+project. Thank you.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PWRRXZ2HETVG8&source=url)
